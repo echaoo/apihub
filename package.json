@@ -1,0 +1,43 @@
+{
+  "name": "swagger-vue",
+  "version": "1.0.3",
+  "description": "Swagger to JS & Vue & Axios Codegen",
+  "main": "index.js",
+  "scripts": {
+    "gen:api": "node example/create_api/index.js",
+    "gen:yaml": "node example/create_yaml/index.js",
+    "gen:md": "node example/create_md/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenweiqun/swagger-vue.git"
+  },
+  "keywords": [
+    "swagger",
+    "js",
+    "vue",
+    "codegen"
+  ],
+  "author": "chenweiqun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chenweiqun/swagger-vue/issues"
+  },
+  "homepage": "https://github.com/chenweiqun/swagger-vue#readme",
+  "dependencies": {
+    "handlebars": "^4.0.6",
+    "js-beautify": "^1.6.12",
+    "lodash": "^4.17.4",
+    "nunjucks": "^3.2.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^7.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^2.1.1"
+  },
+  "apihub": {
+    "url": "http://49.233.239.189:18020/",
+    "projectName": "ep-common-msg-adapt-server-v1"
+  }
+}
