@@ -1,0 +1,13 @@
+import request from './axios.config.js'
+{% for method in methods %}
+/**
+* {{ method.summary }}
+* @param data
+*/
+export function {{ method.methodName }} (data) {
+  return request({
+    url: '/web/mall/mall-server-product-oss-v1/oss/product/get_specifications',
+    method: '{{ method.method }}',
+    params: data
+  })
+}{% endfor %}

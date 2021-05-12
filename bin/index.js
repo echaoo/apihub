@@ -1,9 +1,9 @@
 // const jsonData = require('../api-docs.json')
 
-const swaggerGen = require('../../index.js')
+const swaggerGen = require('../index.js')
 const fs = require('fs')
 const path = require('path')
-const packageParams = require(path.join(__dirname, '../../package.json'))
+const packageParams = require(path.join(__dirname, '../package.json'))
 const request = require('./request')
 
 const apiUrl = packageParams.apihub && packageParams.apihub.url
@@ -12,14 +12,15 @@ const projectName = packageParams.apihub && packageParams.apihub.projectName
 init()
 
 async function init () {
-  deleteFolderRecursive(path.join(__dirname, '../dist/'))
+  console.log(__dirname)
+  deleteFolderRecursive(path.join(__dirname, '../../../src/service/'))
   const jsonData = await getResource()
   const codeResult = swaggerGen(jsonData)
-  fs.mkdirSync(path.join(__dirname, '../dist/'))
-  fs.mkdirSync(path.join(__dirname, '../dist/apis/'))
+  fs.mkdirSync(path.join(__dirname, '../../../service/'))
+  fs.mkdirSync(path.join(__dirname, '../../../service/apis/'))
   for (let i in codeResult) {
     const result = codeResult[i]
-    fs.writeFileSync(path.join(__dirname, `../dist/apis/${result.name}.js`), result.code)
+    fs.writeFileSync(path.join(__dirname, `../../../service/apis/${result.name}.js`), result.code)
   }
 }
 async function getResource () {

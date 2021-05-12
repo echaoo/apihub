@@ -1,16 +1,18 @@
 {
-  "name": "swagger-vue",
-  "version": "1.0.3",
+  "name": "swagger-autoapi",
+  "version": "1.0.2",
   "description": "Swagger to JS & Vue & Axios Codegen",
   "main": "index.js",
-  "scripts": {
-    "gen:api": "node example/create_api/index.js",
-    "gen:yaml": "node example/create_yaml/index.js",
-    "gen:md": "node example/create_md/index.js"
+  "bin": {
+    "mocha": "./bin/index.js"
   },
+  "scripts": {
+    "gen:api": "node example/create_api/index.js"
+  },
+
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chenweiqun/swagger-vue.git"
+    "url": "https://github.com/echaoo/apihub.git"
   },
   "keywords": [
     "swagger",
@@ -18,15 +20,13 @@
     "vue",
     "codegen"
   ],
-  "author": "chenweiqun",
+  "author": "echaoo",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/chenweiqun/swagger-vue/issues"
   },
-  "homepage": "https://github.com/chenweiqun/swagger-vue#readme",
+  "homepage": "https://github.com/echaoo/apihub",
   "dependencies": {
-    "handlebars": "^4.0.6",
-    "js-beautify": "^1.6.12",
     "lodash": "^4.17.4",
     "nunjucks": "^3.2.3"
   },
@@ -37,7 +37,8 @@
     "eslint-plugin-standard": "^2.1.1"
   },
   "apihub": {
-    "url": "http://49.233.239.189:18020/",
-    "projectName": "ep-common-msg-adapt-server-v1"
+    "url": "http://192.168.134.226:8090/",
+    "projectName": "ai"
   }
+
 }
