@@ -1,0 +1,19 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "autoapi": "autoapi"
+  },
+  "author": "",
+  "license": "ISC",
+  "apihub": {
+    "url": "http://192.168.134.226:8090/",
+    "projectName": "ai"
+  },
+  "dependencies": {
+    "swagger-autoapi": "^1.0.6"
+  }
+}
