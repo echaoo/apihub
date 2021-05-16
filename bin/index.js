@@ -14,13 +14,26 @@ init()
 
 async function init () {
   deleteFolderRecursive('./src/service/')
-  const jsonData = await getResource()
+  let jsonData
+  try {
+    jsonData = await getResource()
+  } catch (e) {
+    console.error('请求出错，请检查网络')
+  }
   const codeResult = swaggerGen(jsonData)
   fs.mkdirSync('./src/service/')
   fs.mkdirSync('./src/service/apis')
   for (let i in codeResult) {
     const result = codeResult[i]
-    fs.writeFileSync(`./src/service/apis/${result.name}.js`, result.code)
+    if (!result || !result.code) {
+      console.error('接口结果异常')
+    } else {
+      try {
+        fs.writeFileSync(`./src/service/apis/${result.name}.js`, result.code)
+      } catch (e) {
+        console.error('写文件失败')
+      }
+    }
   }
 }
 async function getResource () {
