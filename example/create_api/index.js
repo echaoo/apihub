@@ -12,14 +12,15 @@ const projectName = packageParams.apihub && packageParams.apihub.projectName
 init()
 
 async function init () {
-  deleteFolderRecursive(path.join(__dirname, '../dist/'))
+  deleteFolderRecursive(path.join(__dirname, './src/service/'))
   const jsonData = await getResource()
   const codeResult = swaggerGen(jsonData)
-  fs.mkdirSync(path.join(__dirname, '../dist/'))
-  fs.mkdirSync(path.join(__dirname, '../dist/apis/'))
+  fs.mkdirSync(path.join(__dirname, './src/service/'))
+  fs.mkdirSync(path.join(__dirname, './src/service/apis/'))
+  fs.writeFileSync(path.join(__dirname, `./src/service/apis/test.js`), 'kskkskskk')
   for (let i in codeResult) {
     const result = codeResult[i]
-    fs.writeFileSync(path.join(__dirname, `../dist/apis/${result.name}.js`), result.code)
+    fs.writeFileSync(path.join(__dirname, `./src/service/apis/${result.name}.js`), result.code)
   }
 }
 async function getResource () {

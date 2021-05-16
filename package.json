@@ -1,15 +1,14 @@
 {
   "name": "swagger-autoapi",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "Swagger to JS & Vue & Axios Codegen",
   "main": "index.js",
   "bin": {
-    "mocha": "./bin/index.js"
+    "autoapi": "./bin/index.js"
   },
   "scripts": {
     "gen:api": "node example/create_api/index.js"
   },
-
   "repository": {
     "type": "git",
     "url": "https://github.com/echaoo/apihub.git"
@@ -40,5 +39,4 @@
     "url": "http://192.168.134.226:8090/",
     "projectName": "ai"
   }
-
 }
