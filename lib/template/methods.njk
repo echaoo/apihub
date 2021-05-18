@@ -1,4 +1,4 @@
-import request from './axios.config.js'
+import request from '../axios.config.js'
 {% for method in methods %}
 /**
 * {{ method.summary }}
@@ -6,7 +6,7 @@ import request from './axios.config.js'
 */
 export function {{ method.methodName }} (data) {
   return request({
-    url: '/web/mall/mall-server-product-oss-v1/oss/product/get_specifications',
+    url: '{{ method.path }}',
     method: '{{ method.method }}',
     params: data
   })

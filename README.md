@@ -6,7 +6,27 @@ npm install swagger-autoapi --dev --save
 ```
 
 # Usage
-在package.json中添加字段，配置swagger请求地址和
+在package.json中写入配置信息
+```json
+{
+  "scripts": {
+    "autoapi": "autoapi"
+  },
+  "apihub": {
+    "url": "http://xxx.com",
+    "projectName": "swagger-project-name"
+  }
+}
+```
+需要生成api时执行npm run autoapi即可。
+
+# Todo List
+-[ ] request的封装模板完善
+-[ ] 允许配置请求path的前缀
+-[ ] 支持config文件进行配置
+-[ ] 支持eslint配置
+-[ ] 支持.d.ts文件，便于编辑器提示
+-[ ] 考虑支持ts？自动生成ts类型定义
 
 # License
 

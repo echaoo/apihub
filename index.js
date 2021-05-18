@@ -7,11 +7,11 @@ const fs = require('fs')
 const path = require('path')
 
 module.exports = function (opt) {
-  let data = parse(opt)
+  const data = parse(opt)
   const apiGroup = utils.genApiGroup(data.methods)
   const apiTemplate = fs.readFileSync(path.join(__dirname, './lib/template/axios.config.js'), 'utf-8')
   const methods = fs.readFileSync(path.join(__dirname, './lib/template/methods.njk'), 'utf-8')
-  let codeResult = [{
+  const codeResult = [{
     name: 'axios.config',
     code: codegen(apiTemplate)
   }]
@@ -25,7 +25,5 @@ module.exports = function (opt) {
 }
 
 function codegen (template, methods) {
-  // let template = Handlebars.compile(apiTemplate)(data)
-  // template = beautify(template, {indent_size: 2, max_preserve_newlines: -1})
   return nunjucks.renderString(template, { methods })
 }

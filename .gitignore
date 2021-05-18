@@ -4,3 +4,9 @@ dist/**
 npm-debug.log
 debug.log
 .idea
+example/src/service/axios.config.js
+example/src/service/apis/badcaselog.js
+example/src/service/apis/city.js
+example/src/service/apis/dm.js
+example/src/service/apis/server.js
+example/src/service/apis/template.js

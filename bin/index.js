@@ -28,8 +28,12 @@ async function init () {
     if (!result || !result.code) {
       console.error('接口结果异常')
     } else {
+      let baseUrl = './src/service/'
+      if (i !== '0') {
+        baseUrl += 'apis/'
+      }
       try {
-        fs.writeFileSync(`./src/service/apis/${result.name}.js`, result.code)
+        fs.writeFileSync(`${baseUrl}${result.name}.js`, result.code)
       } catch (e) {
         console.error('写文件失败')
       }
