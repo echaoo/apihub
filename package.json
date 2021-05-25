@@ -1,13 +1,10 @@
 {
   "name": "swagger-autoapi",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "Swagger to JS & Vue & Axios Codegen",
   "main": "index.js",
   "bin": {
     "autoapi": "./bin/index.js"
-  },
-  "scripts": {
-    "gen:api": "node example/create_api/index.js"
   },
   "repository": {
     "type": "git",
@@ -33,10 +30,7 @@
     "eslint": "^6.8.0",
     "eslint-config-standard": "^7.1.0",
     "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^2.1.1"
-  },
-  "apihub": {
-    "url": "http://192.168.134.226:8090/",
-    "projectName": "ai"
+    "eslint-plugin-standard": "^2.1.1",
+    "prettier": "2.3.0"
   }
 }

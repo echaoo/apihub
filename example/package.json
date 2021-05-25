@@ -12,7 +12,10 @@
   "apihub": {
     "url": "http://192.168.134.226:8090/",
     "projectName": "ai",
-    "pathPrefix": "/api"
+    "pathPrefix": "/api",
+    "prettier":  {
+      "semi": false
+    }
   },
   "dependencies": {
     "swagger-autoapi": "^1.0.6"

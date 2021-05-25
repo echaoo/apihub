@@ -5,11 +5,15 @@ const fs = require('fs')
 const path = require('path')
 const swaggerGen = require(path.join(__dirname, '../index.js'))
 const packageParams = require(path.join(__dirname, '../package.json'))
+const configFile = require(path.join(__dirname, '../autoapi.config.js'))
 const request = require('./request')
+const prettier = require("prettier")
 
-const apiUrl = packageParams.apihub && packageParams.apihub.url
-const projectName = packageParams.apihub && packageParams.apihub.projectName
-const pathPrefix = packageParams.apihub && packageParams.apihub.pathPrefix
+const config = configFile || packageParams.apihub || {}
+const apiUrl = config.url
+const projectName = config.projectName
+const pathPrefix = config.pathPrefix
+const prettierParam =config.prettier || {}
 
 init()
 
@@ -34,7 +38,9 @@ async function init () {
         baseUrl += 'apis/'
       }
       try {
-        fs.writeFileSync(`${baseUrl}${result.name}.js`, result.code)
+        // 代码风格支持
+        const formatResult = prettier.format(result.code, prettierParam)
+        fs.writeFileSync(`${baseUrl}${result.name}.js`, formatResult)
       } catch (e) {
         console.error('写文件失败')
       }
