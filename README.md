@@ -14,7 +14,8 @@ npm install swagger-autoapi --dev --save
   },
   "apihub": {
     "url": "http://xxx.com",
-    "projectName": "swagger-project-name"
+    "projectName": "swagger-project-name",
+    "pathPrefix": "/api"
   }
 }
 ```
@@ -22,7 +23,7 @@ npm install swagger-autoapi --dev --save
 
 # Todo List
 -[ ] request的封装模板完善
--[ ] 允许配置请求path的前缀
+-[X] 允许配置请求path的前缀
 -[ ] 支持config文件进行配置
 -[ ] 支持eslint配置
 -[ ] 支持.d.ts文件，便于编辑器提示

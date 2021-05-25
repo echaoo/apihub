@@ -6,9 +6,9 @@ const utils = require('./lib/utils.js')
 const fs = require('fs')
 const path = require('path')
 
-module.exports = function (opt) {
+module.exports = function (opt, pathPrefix) {
   const data = parse(opt)
-  const apiGroup = utils.genApiGroup(data.methods)
+  const apiGroup = utils.genApiGroup(data.methods, pathPrefix)
   const apiTemplate = fs.readFileSync(path.join(__dirname, './lib/template/axios.config.js'), 'utf-8')
   const methods = fs.readFileSync(path.join(__dirname, './lib/template/methods.njk'), 'utf-8')
   const codeResult = [{

@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "autoapi": "autoapi"
+    "autoapi": "node ../bin/index.js"
   },
   "author": "",
   "license": "ISC",
   "apihub": {
     "url": "http://192.168.134.226:8090/",
-    "projectName": "ai"
+    "projectName": "ai",
+    "pathPrefix": "/api"
   },
   "dependencies": {
     "swagger-autoapi": "^1.0.6"

@@ -9,6 +9,7 @@ const request = require('./request')
 
 const apiUrl = packageParams.apihub && packageParams.apihub.url
 const projectName = packageParams.apihub && packageParams.apihub.projectName
+const pathPrefix = packageParams.apihub && packageParams.apihub.pathPrefix
 
 init()
 
@@ -20,7 +21,7 @@ async function init () {
   } catch (e) {
     console.error('请求出错，请检查网络')
   }
-  const codeResult = swaggerGen(jsonData)
+  const codeResult = swaggerGen(jsonData, pathPrefix)
   fs.mkdirSync('./src/service/')
   fs.mkdirSync('./src/service/apis')
   for (let i in codeResult) {
